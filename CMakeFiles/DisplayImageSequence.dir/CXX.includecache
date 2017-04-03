@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/2017qdawkins/fastacc/NeuroLab/DisplayImageSequence.cpp
+fstream
+-
+iostream
+-
+chrono
+-
+windows.h
+-
+tchar.h
+-
+stdio.h
+-
+opencv2/opencv.hpp
+-
+vector
+-
+cmath
+-
+
