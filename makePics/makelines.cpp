@@ -50,20 +50,14 @@ inline int getColor(int pos, vector<int> adj, int dim, int pixels) {
 
 int main() {
 	path = "./UNCOMPRESSED/";
-	base1 = "test";
-	base2 = "circle";
 	base3 = "lines";
 	ext = ".ppm";
 	type = "P3";
 	dimen = 1024;
 	len = 4;
 	color = 255;
-	red = chrono::system_clock::now().time_since_epoch().count();
 	for(float res = 1; res <= dimen/4; res = res+1) {
-		ofstream output1, output2, output3;
-		Mat mat = Mat::zeros(dimen, dimen, CV_8UC3);
-		output1.open(path+base1+nameFile(res, len)+ext);
-		output2.open(path+base2+nameFile(res, len)+ext);
+		ofstream output3;
 		output3.open(path+base3+nameFile(res, len)+ext);
 		int pixels = ceil(dimen/res)*ceil(dimen/res);
 		vector<int> tempRed(pixels);
@@ -82,39 +76,15 @@ int main() {
 		shuffle(tempGreen.begin(), tempGreen.end(), default_random_engine(green));
 		blue = chrono::system_clock::now().time_since_epoch().count();
 		shuffle(tempBlue.begin(), tempBlue.end(), default_random_engine(blue));
-		int count = 0;
-		int countLines = 0;
-		int reset = 0;
-		int resCount = 0;
-		int diff = int(dimen)%int(res);
-		output1 << type << endl;
-		output1 << dimen << " " << dimen << endl;
-		output1 << color << endl;
-		output2 << type << endl;
-		output2 << dimen << " " << dimen << endl;
-		output2 << color << endl;
 		output3 << type << endl;
 		output3 << dimen << " " << dimen << endl;
 		output3 << color << endl;
 		for(int p = 0; p < dimen*dimen; ++p) {
-			output1 << tempRed[count] << " " << tempGreen[count] << " " << tempBlue[count] << " ";
-			output2 << int(mat.at<Vec3b>(p/int(dimen), p%int(dimen))[0]) << " " << int(mat.at<Vec3b>(p/int(dimen), p%int(dimen))[1]) << " " << int(mat.at<Vec3b>(p/int(dimen), p%int(dimen))[2]) << " ";
-			if((p-resCount*diff)%int(res) == int(res)-1 || p%int(dimen) == int(dimen)-1) {
-				++count;
-				if((p/int(dimen))%int(res)==int(res)-1) {
-					reset = count;
-				}
-			}
-			if((p+1)%int(dimen)==0) {
-				count = reset;
-				++resCount;
-			}
 			countLines = getColor(p, adjacencies, dimen, pixels);
 			adjacencies[p] = countLines;
 			output3 << tempRed[countLines] << " " << tempGreen[countLines] << " " << tempBlue[countLines] << " ";
 		}
-		output1.close();
-		output2.close();
+		output3.close();
 	}
 	return 0;
 }
