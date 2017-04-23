@@ -1,3 +1,3 @@
-/home/2017qdawkins/fastacc/NeuroLab/makePics/CMakeFiles/edit_cache.dir
-/home/2017qdawkins/fastacc/NeuroLab/makePics/CMakeFiles/rebuild_cache.dir
-/home/2017qdawkins/fastacc/NeuroLab/makePics/CMakeFiles/makepics.dir
+/home/quinn/neuroproject/NeuroLab/makePics/CMakeFiles/rebuild_cache.dir
+/home/quinn/neuroproject/NeuroLab/makePics/CMakeFiles/edit_cache.dir
+/home/quinn/neuroproject/NeuroLab/makePics/CMakeFiles/makepics.dir

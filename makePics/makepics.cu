@@ -1,4 +1,4 @@
-#include <iostream>https://github.com/qedawkins/NeuroLab.git
+#include <iostream>
 #include <fstream>
 #include <algorithm>
 #include <vector>
@@ -12,7 +12,7 @@ using namespace cv;
 
 string path, base1, base2, base3, ext, type;
 float dimen, color;
-int len;https://github.com/qedawkins/NeuroLab.git
+int len;
 unsigned red, green, blue;
 
 inline string nameFile(int n, int len)
@@ -112,9 +112,11 @@ int main() {
 			countLines = getColor(p, adjacencies, dimen, pixels);
 			adjacencies[p] = countLines;
 			output3 << tempRed[countLines] << " " << tempGreen[countLines] << " " << tempBlue[countLines] << " ";
+			cout << p << endl;
 		}
 		output1.close();
 		output2.close();
+		output3.close();
 	}
 	return 0;
 }

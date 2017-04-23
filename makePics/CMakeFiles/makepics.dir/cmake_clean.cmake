@@ -1,11 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/makepics.dir/makepics.cpp.o"
+  "CMakeFiles/makepics.dir/makepics_generated_makepics.cu.o"
   "makepics.pdb"
-  "makepics.exe"
-  "libmakepics.dll.a"
+  "makepics"
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
+foreach(lang )
   include(CMakeFiles/makepics.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()
